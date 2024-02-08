@@ -1,0 +1,13 @@
+services:
+  alist:
+    container_name: ${CONTAINER_NAME}
+    image: xhofe/alist:${IMAGE_VERSION}
+    restart: unless-stopped
+    environment:
+      - PUID=0
+      - PGID=0
+      - UMASK=022
+    ports:
+      - ${PORT}:5244
+    volumes:
+      - ${CONTAINER_DIR}/data:/opt/alist/data
