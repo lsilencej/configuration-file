@@ -1,0 +1,15 @@
+services:
+  caddy:
+    container_name: ${CONTAINER_NAME}
+    image: lsilencej/caddy:${IMAGE_VERSION}
+    restart: unless-stopped
+    ports:
+      - ${HTTP_PORT}:80
+      - ${HTTPS_PORT}:443
+      - ${HTTPS_PORT}:443/udp
+      - ${API_PORT}:2019
+    volumes:
+      - ${CONTAINER_DIR}/Caddyfile:/etc/caddy/Caddyfile
+      - ${CONTAINER_DIR}/srv:/srv
+      - ${CONTAINER_DIR}/data:/data
+      - ${CONTAINER_DIR}/config:/config

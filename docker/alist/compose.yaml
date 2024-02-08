@@ -10,4 +10,4 @@ services:
     ports:
       - ${PORT}:5244
     volumes:
-      - ${CONTAINER_DIR}/data:/opt/alist/data
+      - ${CONTAINER_DIR}:/opt/alist/data
