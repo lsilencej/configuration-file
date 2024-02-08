@@ -11,8 +11,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          path: docker/caddy
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
@@ -29,6 +27,6 @@ jobs:
       - name: Build and Push
         uses: docker/build-push-action@v5
         with:
-          context: .
+          context: ${{ github.workspace }}/docker/caddy
           push: true
           tags: lsilencej/caddy:latest
