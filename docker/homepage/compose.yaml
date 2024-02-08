@@ -1,7 +1,7 @@
 services:
   homepage:
     container_name: ${CONTAINER_NAME}
-    image: ghcr.io/benphelps/homepage:${IMAGE_VERSION}
+    image: ghcr.io/gethomepage/homepage:${IMAGE_VERSION}
     restart: unless-stopped
     ports:
       - ${PORT}:3000
