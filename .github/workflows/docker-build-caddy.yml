@@ -12,7 +12,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          path: /docker/caddy
+          path: docker/caddy
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
