@@ -1,0 +1,15 @@
+services:
+  code-server:
+    container_name: ${CONTAINER_NAME}
+    image: lscr.io/linuxserver/code-server:${IMAGE_VERSION}
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Shanghai
+      - PASSWORD=password
+      - DEFAULT_WORKSPACE=/workspace
+    ports:
+      - ${PORT}:8443
+    volumes:
+      - ${CONTAINER_DIR}/config:/config

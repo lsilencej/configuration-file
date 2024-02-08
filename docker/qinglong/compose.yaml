@@ -1,0 +1,9 @@
+services:
+  qinglong:
+    container_name: ${CONTAINER_NAME}
+    image: whyour/qinglong:${IMAGE_VERSION}
+    restart: unless-stopped
+    ports:
+      - ${PORT}:5700
+    volumes:
+      - ${CONTAINER_DIR}:/ql/data

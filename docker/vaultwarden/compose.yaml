@@ -1,0 +1,11 @@
+services:
+  vaultwarden:
+    container_name: ${CONTAINER_NAME}
+    image: vaultwarden/server:${IMAGE_VERSION}
+    restart: unless-stopped
+    environment:
+      DOMAIN: "https://password.lsilencej.top"
+    ports:
+      - ${PORT}:80
+    volumes:
+      - ${CONTAINER_DIR}:/data
